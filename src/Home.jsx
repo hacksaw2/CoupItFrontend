@@ -120,8 +120,8 @@ const  handleDelete = (id)=>{
     <div className=' bg-[#ecdfcc45] h-[100vh]'>
       
 <div className="x flex  h-[30vh] lg:h-[40vh] items-center justify-center">
-      <form onSubmit={handleSubmit} className=' border-4 p-2 border-[#697565] lg:w-[30vw] lg:h-[35vh] flex justify-center items-center shadow-2xl'>
-        <div className="n">
+      <form onSubmit={handleSubmit} className=' border-4 p-2 border-[#697565] lg:w-[30vw] lg:h-[35vh] flex justify-center items-center  shadow-2xl'>
+        <div className="n ">
 
         <div className="couponID">
           <input className='border-1 text-center rounded-md mb-1' placeholder='CouponId' value={couponId} onChange={(e)=> setCouponId(e.target.value)}/>
@@ -144,7 +144,7 @@ const  handleDelete = (id)=>{
           <input className='border-1 text-center rounded-md mb-2' placeholder='Reward' value={reward} onChange={(e)=> setReward(e.target.value)}/>
         </div>
 
-     <button className='bg-red-700 text-white p-1 w-44  rounded-lg'>Submit</button>
+     <button className='bg-red-700 text-white p-1 w-44  rounded-lg ml-3'>Submit</button>
 
      </div>
       </form>
