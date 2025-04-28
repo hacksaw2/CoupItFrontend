@@ -26,7 +26,7 @@ const [couponId, setCouponId] = useState('')
 const handleSubmit = () =>{
   // e.preventDefault();
 
-  axios.post('http://localhost:5000/home',{couponId,coupon,type,expiry,reward})
+  axios.post('https://coupitbackend.onrender.com/home',{couponId,coupon,type,expiry,reward})
   .then((result)=> console.log("this is your result",result))
 
 
@@ -40,7 +40,7 @@ const handleSubmit = () =>{
 }
 
 useEffect(() => {
-  axios.get('http://localhost:5000/home')
+  axios.get('https://coupitbackend.onrender.com/home')
     .then((result) => {
       console.log("this is your result", result.data);
       // console.log('This is id',result.data._id)
@@ -52,7 +52,7 @@ useEffect(() => {
 
 const  handleEdit = (id)=>{
   
-  axios.get(`http://localhost:5000/home/${id}`)
+  axios.get(`https://coupitbackend.onrender.com/home/${id}`)
   .then((res)=>{console.log('This is edit ',res)
 
 
@@ -69,10 +69,10 @@ navigate('/edit')
 
 const  handleDelete = (id)=>{
   
-  axios.delete(`http://localhost:5000/home/${id}`)
+  axios.delete(`https://coupitbackend.onrender.com/home/${id}`)
   .then((res)=>{console.log('This is edit ',res)
 
-    axios.get('http://localhost:5000/home')
+    axios.get('https://coupitbackend.onrender.com/home')
     .then((result) => {
       console.log("this is your result", result.data);
       // console.log('This is id',result.data._id)

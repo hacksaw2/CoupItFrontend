@@ -16,7 +16,7 @@ const Admin = () => {
   const handleSubmit = (e) =>{
     e.preventDefault();
 
-    axios.post('http://localhost:5000/admin',{username,password})
+    axios.post('https://coupitbackend.onrender.com/admin',{username,password})
     .then((result)=>{console.log("This is result",result)
 
     if(result.data.success){
@@ -33,7 +33,7 @@ const Admin = () => {
 
   return (
 
-    <div className="c bg-[#ecdfcc45]  h-[90vh]">
+    <div className="c bg-[#ecdfcc45]  h-[100vh]">
     <div className='flex justify-center items-center h-[50vh] lg:h-[70vh]'>
       <div className="box border-6 border-[#3C3D37] shadow-xl shadow-gray-300 w-80 h-60 lg:w-80 lg:h-80 flex   items-center">
         <form onSubmit={handleSubmit} className='ml-4 text-lg' >
