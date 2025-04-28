@@ -16,7 +16,7 @@ const Admin = () => {
   const handleSubmit = (e) =>{
     e.preventDefault();
 
-    axios.post('https://coupitbackend.onrender.com/admin',{username,password})
+    axios.post('http://localhost:5000/admin',{username,password})
     .then((result)=>{console.log("This is result",result)
 
     if(result.data.success){

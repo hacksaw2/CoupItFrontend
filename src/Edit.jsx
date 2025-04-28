@@ -43,7 +43,7 @@ setId(m.data._id)
     e.preventDefault()
 
 
-    axios.put(`https://coupitbackend.onrender.com/edit/${id}`,{couponId,coupon,type,expiry,reward})
+    axios.put(`http://localhost:5000/edit/${id}`,{couponId,coupon,type,expiry,reward})
 
     setCouponId('')
     setCoupon('')
