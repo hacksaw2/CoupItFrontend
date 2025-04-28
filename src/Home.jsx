@@ -29,7 +29,16 @@ const handleSubmit = (e) =>{
   
 
   axios.post('https://coupitbackend.onrender.com/home',{couponId,coupon,type,expiry,reward})
-  .then((result)=> console.log("this is your result",result))
+  .then((result)=> {console.log("this is your result",result)
+
+    axios.get('https://coupitbackend.onrender.com/home')
+  .then((result) => {
+    console.log("this is your result", result.data);
+    // console.log('This is id',result.data._id)
+    setStoredCoupons(result.data); 
+    
+  })
+  })
 
 
 
@@ -39,13 +48,7 @@ const handleSubmit = (e) =>{
   setExpiry('')
   setReward('')
 
-  axios.get('https://coupitbackend.onrender.com/home')
-  .then((result) => {
-    console.log("this is your result", result.data);
-    // console.log('This is id',result.data._id)
-    setStoredCoupons(result.data); 
-    
-  })
+  
 
   
 
