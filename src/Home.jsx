@@ -23,8 +23,10 @@ const [couponId, setCouponId] = useState('')
 
   
 
-const handleSubmit = () =>{
-  // e.preventDefault();
+const handleSubmit = (e) =>{
+
+  e.preventDefault()
+  
 
   axios.post('https://coupitbackend.onrender.com/home',{couponId,coupon,type,expiry,reward})
   .then((result)=> console.log("this is your result",result))
@@ -37,6 +39,18 @@ const handleSubmit = () =>{
   setExpiry('')
   setReward('')
 
+  axios.get('https://coupitbackend.onrender.com/home')
+  .then((result) => {
+    console.log("this is your result", result.data);
+    // console.log('This is id',result.data._id)
+    setStoredCoupons(result.data); 
+    
+  })
+
+  
+
+  
+
 }
 
 useEffect(() => {
@@ -45,6 +59,11 @@ useEffect(() => {
       console.log("this is your result", result.data);
       // console.log('This is id',result.data._id)
       setStoredCoupons(result.data); 
+
+      
+
+      
+      
       
     })
     
